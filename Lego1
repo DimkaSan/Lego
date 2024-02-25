@@ -1,0 +1,26 @@
+class LegoConstructor:
+    def __init__(self):
+        self.blocks = []
+
+    def add_block(self, block_type, color):
+        block = {"type": block_type, "color": color}
+        self.blocks.append(block)
+        print(f"Добавлен блок: {color} {block_type}")
+
+    def show_blocks(self):
+        if not self.blocks:
+            print("В конструкторе нет блоков.")
+        else:
+            print("Блоки в конструкторе:")
+            for index, block in enumerate(self.blocks, start=1):
+                print(f"{index}. {block['color']} {block['type']}")
+
+# Создаем экземпляр конструктора LEGO
+lego_constructor = LegoConstructor()
+
+# Добавляем блоки
+lego_constructor.add_block("Куб", "Красный")
+lego_constructor.add_block("Пирамида", "Синий")
+
+# Показываем блоки
+lego_constructor.show_blocks()
